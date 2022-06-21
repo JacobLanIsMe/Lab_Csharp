@@ -162,7 +162,6 @@ namespace LoanForm
             this.Controls.Add(this.textBoxLoanAmount);
             this.Name = "LoanForm";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.LoanForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

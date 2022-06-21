@@ -19,4 +19,9 @@ namespace Lab_Form
         public string Name;
         public int Age;
     }
+    public class InstanceStatic
+    {
+        public int instanceCount;
+        public static int staticCount;
+    }
 }

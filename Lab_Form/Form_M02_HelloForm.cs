@@ -38,6 +38,7 @@ namespace Lab_Form
             zodiac = textBoxZodiac.Text;
             string helloResult = $"Hi, 我是{name}\n英文名字是{engName}\n性別是{gender}\n星座是{zodiac}\n很高興認識你。";
             MessageBox.Show(helloResult);
+            MessageBox.Show(InstanceStatic.staticCount.ToString());
         }
     }
 }

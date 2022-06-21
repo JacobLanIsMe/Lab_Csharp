@@ -52,5 +52,63 @@ namespace Lab_Form
         {
             btnRegister01.Click -= btnRegister01_Click;
         }
+
+        delegate double Payment(double money);
+
+        double Discount50off(double money)
+        {
+            return money * 0.5;
+        }
+        double Discount20off(double money)
+        {
+            return money * 0.8;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Payment pay;
+            if (comboBox1.Text == "50%off")
+            {
+                pay = Discount50off;
+            }
+            else
+            {
+                pay = Discount20off;
+            }
+            double finalPrice = pay(double.Parse(textBox1.Text));
+            MessageBox.Show(finalPrice.ToString());
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Text = "Form_M07_SetProperty";
+        }
+
+        private void btnMessageBox_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("今天是星期二嗎?", "請問", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
+            {
+                MessageBox.Show("今天不是星期二!");
+            }
+            else if (result == DialogResult.No)
+            {
+                DialogResult result2 = MessageBox.Show("不然今天是星期一嗎?", "請問", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+                if (result2 == DialogResult.Yes)
+                {
+                    MessageBox.Show("是的");
+                }
+                else
+                {
+                    MessageBox.Show("今天不是禮拜二也不是禮拜三");
+                }
+            }
+        }
+
+        private void btnDialog_Click(object sender, EventArgs e)
+        {
+            Form_M02_HelloForm form02 = new Form_M02_HelloForm();
+            form02.ShowDialog();
+        }
     }
 }
